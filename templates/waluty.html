@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konwerter walut</title>
+</head>
+<body>
+  <form method="POST" action="">
+      <label for="currency"><b>Wybierz walutę:</b></label>
+      <select name="currency">
+        {% for item in items %}
+        <option>{{item}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <p>Wpisz kwotę, którą chcesz wymienić na daną walutę:</p>
+      <input type="text" name="amount">
+      <br>
+      <input type="submit" value="Policz">
+  </form>
+
+  <p>Naciśnij przycisk "Policz" aby przeliczyć wpisaną kwotę na danę walutę</p>
+</body>
+</html>
