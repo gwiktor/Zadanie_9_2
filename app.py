@@ -14,6 +14,14 @@ data_json = response.json()
 for i in data_json:
     data12 = (i.get('rates'))
 
+# Zapiswanie do pliku kantor.csv
+with open('kantor.csv', 'w', newline='') as csvfile:
+    fieldnames = ['currency', 'code', 'bid', 'ask']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for i in data12:
+        writer.writerow(i)
+
 # Zdefiniowanie listy 'cod', w której zawarte są kody walut
 cod = []
 for i in data12:
